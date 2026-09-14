@@ -1,6 +1,6 @@
 # Publishing checklist
 
-1. Verify that you have redistribution permission for the custom main-menu template and any custom assets inside it.
+1. Verify that the included Sims 4 Mod Manager-generated template still contains only the neutral placeholder and no third-party custom artwork.
 2. Test the updater after the latest Sims 4 patch.
 3. Test on a clean Mods folder with no competing main-menu replacement.
 4. Run `Update_Main_Menu.bat` and verify the generated lot background.
