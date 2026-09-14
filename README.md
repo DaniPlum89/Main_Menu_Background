@@ -1,6 +1,6 @@
 # Dynamic Lot Main Menu for The Sims 4
 
-Dynamic Lot Main Menu updates The Sims 4 main-menu background before launch so it shows the **home/current lot of the last-played household** from the newest save.
+Dynamic Lot Main Menu updates the Sims 4 main-menu background before launch so it shows the **home/current lot of the last-played household** from the newest save.
 
 ## What it does
 
@@ -10,8 +10,8 @@ The updater:
 2. Reads the active/last-played household from the save.
 3. Finds that household's current/home zone.
 4. Locates the matching `SaveGameLotThumbnail1` image stored inside the save.
-5. Builds a 1280×720 background using the real lot thumbnail, with a blurred widescreen fill behind the square image.
-6. Converts the texture to The Sims 4's DST1 layout.
+5. Builds a 1920×1080 background using the real lot thumbnail, with a blurred widescreen fill behind the square image.
+6. Encodes the generated background as a 1920×1080 DXT5 texture matching the clean template package.
 7. Writes `ZZZ_Dynamic_Lot_Main_Menu.package` into the user's Mods folder.
 8. Deletes `localthumbcache.package` so the updated texture loads on the next launch.
 
@@ -82,4 +82,4 @@ This project was developed and tested against The Sims 4 `1.127.41.1030`. Game u
 
 The updater code in `src/` is released under the MIT License. The Sims 4, its formats, trademarks, and game assets are property of Electronic Arts/Maxis.
 
-Before publishing a release that includes `Main_Menu_Dynamic_Template.package`, make sure you have permission to redistribute every non-EA custom asset contained in that template. If the template was based on another creator's main-menu mod, replace or remove their artwork/code as required by their license or obtain permission first.
+`Main_Menu_Dynamic_Template.package` is based on a package generated through Sims 4 Mod Manager and uses a neutral placeholder background. It no longer depends on the previously tested Enchanted Forest package.
