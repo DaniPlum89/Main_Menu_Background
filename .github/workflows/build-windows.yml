@@ -25,10 +25,10 @@ jobs:
       - name: Install build dependencies
         run: python -m pip install -r requirements-dev.txt
 
-      - name: Build standalone Windows executable
+      - name: Build Windows application folder
         shell: pwsh
         run: |
-          pyinstaller --noconfirm --clean --onefile `
+          pyinstaller --noconfirm --clean --onedir --noupx `
             --name DynamicLotMainMenu `
             --add-data "assets/Main_Menu_Dynamic_Template.package;." `
             src/TS4_Lot_Menu_Updater.py
@@ -37,7 +37,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path release\DynamicLotMainMenu | Out-Null
-          Copy-Item dist\DynamicLotMainMenu.exe release\DynamicLotMainMenu\
+          Copy-Item -Path dist\DynamicLotMainMenu\* -Destination release\DynamicLotMainMenu\ -Recurse -Force
           Copy-Item Update_Main_Menu.bat release\DynamicLotMainMenu\
           Copy-Item Update_And_Launch_TS4.bat release\DynamicLotMainMenu\
           Copy-Item README.md release\DynamicLotMainMenu\
